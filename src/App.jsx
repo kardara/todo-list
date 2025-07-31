@@ -15,7 +15,7 @@ const App = () => {
   function toggleCheck(index) {
     setTodos((prev) =>
       prev.map((todo, i) =>
-        i !== index ? { ...todo, checked: !todo.checked } : todo
+        i === index ? { ...todo, checked: !todo.checked } : todo
       )
     );
   }
@@ -52,9 +52,7 @@ const App = () => {
                 className="w-3 mr-2"
                 type="checkbox"
               />
-              <span
-                className={todo.checked ? "line-through text-gray-300" : ""}
-              >
+              <span className={todo.checked ? "line-through" : ""}>
                 {todo.text}
               </span>
             </div>
